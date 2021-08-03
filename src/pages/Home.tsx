@@ -1,8 +1,9 @@
 import { IonButtons,IonItem,IonCardHeader,IonCardSubtitle,IonCardTitle, IonGrid,IonIcon,IonRow,IonCol,IonCard,IonCardContent,IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 // import ExploreContainer from '../components/ExploreContainer';
 import './Home.css';
-import {restaurantOutline} from "ionicons/icons";
-
+import Cooking from "../components/Cooking";
+import Cards from "../components/Cards";
+import {cashOutline, pencilOutline,arrowUpCircleOutline,todayOutline,personOutline,addOutline} from "ionicons/icons";
 
 const Page: React.FC = () => {
   return (
@@ -21,30 +22,24 @@ const Page: React.FC = () => {
       <IonRow className="ion-justify-content-center" >
 
         <IonCol className=" ion-justify-content-center">
-          <div className="main">
-          <IonCard className="card1 ion-padding-top ion-text-center" color="dark" mode="md">
-            <IonIcon className="log" icon={restaurantOutline}></IonIcon>
-            <IonTitle className="title2 ion-text-center"> What's Cooking</IonTitle>
-          </IonCard>
-          <IonCard className="card2" mode="md">
-            <IonCardContent className="content ion-text-center">
-                <h1>Item</h1>
-                <h1>Rate</h1>
-            </IonCardContent>
-          </IonCard>
-        </div>
+         <Cooking/>
         </IonCol>
       </IonRow>
-      {/* <IonRow>
+      <IonRow>
         <IonCol>
-        <IonCard  mode="md">
-        <IonCardHeader>
-            <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
-            <IonCardTitle>Card Title</IonCardTitle>
-          </IonCardHeader>
-          </IonCard>
+          <Cards fabButton={pencilOutline} startIcon={cashOutline}>Update Budget</Cards>
         </IonCol>
-      </IonRow> */}
+      </IonRow>
+      <IonRow>
+        <IonCol>
+          <Cards fabButton={arrowUpCircleOutline} startIcon={todayOutline}>Add Menu</Cards>
+        </IonCol>
+      </IonRow>
+      <IonRow>
+        <IonCol>
+          <Cards fabButton={addOutline} startIcon={personOutline}>Add Vendor</Cards>
+        </IonCol>
+      </IonRow>
     </IonGrid>
     {/* </div> */}
 
